@@ -24,4 +24,6 @@ router.get('/notion/callback', callbackNotion);
 router.get('/notion/databases', authMiddleware, getNotionDatabases);
 router.post('/notion/sync', authMiddleware, syncNotion);
 
+
+
 module.exports = router;

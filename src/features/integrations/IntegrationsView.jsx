@@ -20,7 +20,7 @@ export function IntegrationsView({ integrations, onConnect }) {
   return (
     <div className={`border ${DESIGN.colors.border} ${DESIGN.radius.base} ${DESIGN.colors.card} divide-y divide-[#2E4A3A]`}>
       {platforms.map(platform => {
-        const isConnected = integrations[platform.id];
+        const isConnected = Boolean(integrations[platform.id]);
         
         return (
           <div key={platform.id} className="p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 hover:bg-[#2E4A3A]/30 transition-colors">
@@ -37,7 +37,7 @@ export function IntegrationsView({ integrations, onConnect }) {
             </div>
             
             <Button
-              variant={isConnected ? 'secondary' : 'secondary'}
+              variant="secondary"
               onClick={() => !isConnected && onConnect(platform.id, platform.name)}
               disabled={isConnected}
               className="shrink-0 w-full sm:w-auto text-xs py-1.5 h-8"

@@ -151,7 +151,6 @@ const callbackGoogle = async (req, res, next) => {
 /**
  * GET /api/integrations/google/sync
  * Fetches events from Google Calendar and imports them as AcadSync tasks.
- * Filters out birthday events, all-day recurring fluff, and events > 2 years out.
  */
 const syncGoogle = async (req, res, next) => {
   try {
@@ -166,7 +165,6 @@ const syncGoogle = async (req, res, next) => {
     }
 
     const now = new Date();
-    // Only pull events within the next 2 years — stops birthday spam through 2090
     const twoYearsOut = new Date(now.getFullYear() + 2, now.getMonth(), now.getDate()).toISOString();
 
     const response = await calendar.events.list({
@@ -369,6 +367,7 @@ const syncNotion = async (req, res, next) => {
     next(error);
   }
 };
+
 
 module.exports = {
   createConnectTicket,
