@@ -107,6 +107,8 @@ const connectNotion = async () => {
   window.location.href = `${API_BASE}/integrations/notion/connect?ticket=${ticket}`;
 };
 
+
+
 const syncGoogle = async () => {
   const res = await fetch(`${API_BASE}/integrations/google/sync`, {
     method: 'GET',
@@ -114,6 +116,8 @@ const syncGoogle = async () => {
   });
   return handleResponse(res);
 };
+
+
 
 export default {
   API_BASE,

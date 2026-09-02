@@ -54,11 +54,13 @@ export default function App() {
 
   useEffect(() => {
     const status = searchParams.get('status');
-    if (status === 'success') {
+    const integration = searchParams.get('integration');
+
+    if (status === 'success' && (!integration || integration === 'google')) {
       navigate('/calendar');
       triggerGoogleSync();
       setSearchParams({});
-    } else if (status === 'notion_success') {
+    } else if (status === 'notion_success' || (integration === 'notion' && status === 'success')) {
       navigate('/integrations');
       setIntegrations((prev) => ({ ...prev, notion: true }));
       setSearchParams({});
