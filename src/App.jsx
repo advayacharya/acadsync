@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useSearchParams, useNavigate } from 'react-router-dom';
 import { Plus } from 'lucide-react';
+import { Analytics } from '@vercel/analytics/react';
 
 import { AppShell } from './components/layout/AppShell';
 import { Button } from './components/ui/Button';
@@ -117,7 +118,7 @@ export default function App() {
       const syncStatus = await saveTask(editingTask, taskData);
       setIsModalOpen(false);
       setEditingTask(null);
-      
+
       if (syncStatus && syncStatus.offline) {
         showToast('Saved offline — queued for sync when reconnected', 'success');
       } else if (syncStatus && !syncStatus.success) {
@@ -161,6 +162,7 @@ export default function App() {
           setPassword={setPassword}
         />
         <Toast message={toast.message} type={toast.type} onClose={() => setToast({ message: '', type: 'error' })} />
+        <Analytics />
       </>
     );
   }
@@ -235,6 +237,7 @@ export default function App() {
       )}
 
       <Toast message={toast.message} type={toast.type} onClose={() => setToast({ message: '', type: 'error' })} />
+      <Analytics />
     </AppShell>
   );
 }
