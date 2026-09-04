@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useSearchParams, useNavigate } from 'react-router-dom';
 import { Plus } from 'lucide-react';
-import { Analytics } from '@vercel/analytics/react';
 
 import { AppShell } from './components/layout/AppShell';
 import { Button } from './components/ui/Button';
@@ -14,13 +13,14 @@ import { StudyPlannerView } from './features/planner/StudyPlannerView';
 import { AnalyticsView } from './features/analytics/AnalyticsView';
 import { IntegrationsView } from './features/integrations/IntegrationsView';
 import { TaskModal } from './features/tasks/TaskModal';
+import { TermsPage } from './pages/TermsPage';
 
 import { useAuth } from './hooks/useAuth';
 import { useTasks } from './hooks/useTasks';
 import api from './services/api';
 import { DESIGN } from './lib/designTokens';
 
-export default function App() {
+function MainApp() {
   const { user, isLoggingIn, authError, login, register, logout, setAuthError } = useAuth();
   const {
     tasks,
@@ -162,7 +162,6 @@ export default function App() {
           setPassword={setPassword}
         />
         <Toast message={toast.message} type={toast.type} onClose={() => setToast({ message: '', type: 'error' })} />
-        <Analytics />
       </>
     );
   }
@@ -237,7 +236,15 @@ export default function App() {
       )}
 
       <Toast message={toast.message} type={toast.type} onClose={() => setToast({ message: '', type: 'error' })} />
-      <Analytics />
     </AppShell>
+  );
+}
+
+export default function App() {
+  return (
+    <Routes>
+      <Route path="/terms" element={<TermsPage />} />
+      <Route path="/*" element={<MainApp />} />
+    </Routes>
   );
 }

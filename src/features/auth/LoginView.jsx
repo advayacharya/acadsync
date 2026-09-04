@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Lottie from 'lottie-react';
 import { BrainCircuit, ArrowRight, UserPlus, LogIn } from 'lucide-react';
 import backgroundAnimation from '../../assets/lottieani.json';
@@ -135,8 +136,22 @@ export function LoginView({
             Connect your portals, generate intelligent study plans, and never miss a deadline again with our unified dashboard.
           </p>
         </div>
-        <div className="relative z-10 text-sm text-[#6B8577]">
-          © {new Date().getFullYear()} AcadSync Inc.
+        <div className="relative z-10 flex items-center justify-between text-sm text-[#6B8577]">
+          <span>© {new Date().getFullYear()} AcadSync Inc.</span>
+          <div className="flex items-center gap-3 text-xs">
+            <Link to="/terms" className="hover:text-[#D2A24C] transition-colors">
+              Terms
+            </Link>
+            <span>·</span>
+            <a
+              href="https://www.termsfeed.com/live/09700c29-d594-4476-8599-0d3da3656185"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#D2A24C] transition-colors"
+            >
+              Privacy Policy
+            </a>
+          </div>
         </div>
       </div>
 
@@ -327,6 +342,22 @@ export function LoginView({
               </>
             )}
           </p>
+
+          {/* Legal Footer */}
+          <div className="mt-8 pt-4 border-t border-[#2E4A3A]/50 flex items-center justify-center gap-3 text-xs text-[#6B8577]">
+            <Link to="/terms" className="hover:text-[#D2A24C] transition-colors">
+              Terms and Conditions
+            </Link>
+            <span>·</span>
+            <a
+              href="https://www.termsfeed.com/live/09700c29-d594-4476-8599-0d3da3656185"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#D2A24C] transition-colors"
+            >
+              Privacy Policy
+            </a>
+          </div>
         </div>
       </div>
     </div>

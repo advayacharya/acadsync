@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Sidebar } from './Sidebar';
 import { MobileNav } from './MobileNav';
 import { DESIGN } from '../../lib/designTokens';
@@ -53,8 +54,27 @@ export function AppShell({
         ) : null}
 
         <div className="flex-1 overflow-y-auto overflow-x-hidden p-6 md:p-10 lg:p-12 scrollbar-gutter-stable">
-          <div className="max-w-6xl mx-auto min-h-full">
-            {children}
+          <div className="max-w-6xl mx-auto min-h-full flex flex-col justify-between">
+            <div>
+              {children}
+            </div>
+            <footer className="mt-16 pt-6 border-t border-[#2E4A3A]/60 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#6B8577]">
+              <span>© {new Date().getFullYear()} AcadSync</span>
+              <div className="flex items-center gap-4">
+                <Link to="/terms" className="hover:text-[#D2A24C] transition-colors">
+                  Terms and Conditions
+                </Link>
+                <span className="text-[#2E4A3A]">·</span>
+                <a
+                  href="https://www.termsfeed.com/live/09700c29-d594-4476-8599-0d3da3656185"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#D2A24C] transition-colors"
+                >
+                  Privacy Policy
+                </a>
+              </div>
+            </footer>
           </div>
         </div>
       </main>
