@@ -65,14 +65,9 @@ export function AppShell({
                   Terms and Conditions
                 </Link>
                 <span className="text-[#2E4A3A]">·</span>
-                <a
-                  href="https://www.termsfeed.com/live/09700c29-d594-4476-8599-0d3da3656185"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#D2A24C] transition-colors"
-                >
+                <Link to="/privacy" className="hover:text-[#D2A24C] transition-colors">
                   Privacy Policy
-                </a>
+                </Link>
               </div>
             </footer>
           </div>
