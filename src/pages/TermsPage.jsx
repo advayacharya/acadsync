@@ -177,14 +177,12 @@ export function TermsPage() {
             <h2 className="text-xl font-semibold text-[#F1F5F0] mb-3 tracking-tight">8. Privacy</h2>
             <p className="text-[#9CB0A3] leading-relaxed">
               Your use of AcadSync is also governed by our{' '}
-              <a
-                href="https://www.termsfeed.com/live/09700c29-d594-4476-8599-0d3da3656185"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/privacy"
                 className="text-[#D2A24C] hover:text-[#B98A3C] underline underline-offset-2 transition-colors"
               >
                 Privacy Policy
-              </a>
+              </Link>
               . Please review our Privacy Policy to understand our data collection and usage practices.
             </p>
           </section>
@@ -294,14 +292,12 @@ export function TermsPage() {
             <h2 className="text-xl font-semibold text-[#F1F5F0] mb-3 tracking-tight">15. Entire Agreement</h2>
             <p className="text-[#9CB0A3] leading-relaxed">
               These Terms and Conditions, together with our{' '}
-              <a
-                href="https://www.termsfeed.com/live/09700c29-d594-4476-8599-0d3da3656185"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/privacy"
                 className="text-[#D2A24C] hover:text-[#B98A3C] underline underline-offset-2 transition-colors"
               >
                 Privacy Policy
-              </a>
+              </Link>
               , constitute the entire agreement between you and AcadSync regarding the use of the Service and supersede all prior agreements.
             </p>
           </section>
@@ -324,14 +320,12 @@ export function TermsPage() {
               Terms and Conditions
             </Link>
             <span className="text-[#2E4A3A]">·</span>
-            <a
-              href="https://www.termsfeed.com/live/09700c29-d594-4476-8599-0d3da3656185"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/privacy"
               className="text-xs text-[#6B8577] hover:text-[#D2A24C] transition-colors"
             >
               Privacy Policy
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

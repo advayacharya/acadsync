@@ -14,6 +14,7 @@ import { AnalyticsView } from './features/analytics/AnalyticsView';
 import { IntegrationsView } from './features/integrations/IntegrationsView';
 import { TaskModal } from './features/tasks/TaskModal';
 import { TermsPage } from './pages/TermsPage';
+import { PrivacyPage } from './pages/PrivacyPage';
 
 import { useAuth } from './hooks/useAuth';
 import { useTasks } from './hooks/useTasks';
@@ -244,6 +245,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/terms" element={<TermsPage />} />
+      <Route path="/privacy" element={<PrivacyPage />} />
       <Route path="/*" element={<MainApp />} />
     </Routes>
   );

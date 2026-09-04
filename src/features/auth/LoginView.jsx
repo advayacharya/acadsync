@@ -143,14 +143,9 @@ export function LoginView({
               Terms
             </Link>
             <span>·</span>
-            <a
-              href="https://www.termsfeed.com/live/09700c29-d594-4476-8599-0d3da3656185"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#D2A24C] transition-colors"
-            >
+            <Link to="/privacy" className="hover:text-[#D2A24C] transition-colors">
               Privacy Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>
@@ -349,14 +344,9 @@ export function LoginView({
               Terms and Conditions
             </Link>
             <span>·</span>
-            <a
-              href="https://www.termsfeed.com/live/09700c29-d594-4476-8599-0d3da3656185"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:text-[#D2A24C] transition-colors"
-            >
+            <Link to="/privacy" className="hover:text-[#D2A24C] transition-colors">
               Privacy Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>
